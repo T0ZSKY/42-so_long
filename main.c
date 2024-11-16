@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tomlimon <tomlimon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tomlimon <tom.limon@>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 21:08:37 by tomlimon          #+#    #+#             */
-/*   Updated: 2024/11/16 21:14:44 by tomlimon         ###   ########.fr       */
+/*   Updated: 2024/11/16 21:34:23 by tomlimon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,6 @@ int	main(int argc, char **argv)
 	map = read_map(argv[1]);
 	if (!map || !validate_map(map))
 		return (write(2, "Error: invalid map\n", 19), 1);
-	mlx = mlx_init();
-	win = mlx_new_window(mlx, ft_strlen(map[0]) * 32, count_lines(map) * 32, "so_long");
-	draw_map(mlx, win, map);
-	mlx_hook(win, 17, 0, close_window, mlx);
-	mlx_loop(mlx);
+	ft_printf("Map: %s\n", map[0]);
 	return (0);
 }
