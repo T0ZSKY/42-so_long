@@ -6,15 +6,31 @@
 /*   By: tomlimon <tomlimon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 21:08:52 by tomlimon          #+#    #+#             */
-/*   Updated: 2024/11/16 22:55:29 by tomlimon         ###   ########.fr       */
+/*   Updated: 2024/11/17 21:57:36 by tomlimon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
+typedef struct s_game {
+    void    *mlx;
+    void    *win;
+    void    *img_wall;
+    void    *img_floor;
+    void    *img_collectible;
+    void    *img_player;
+    void    *img_exit;
+    char    **map;
+    int     width;  // Nombre de colonnes de la carte
+    int     height; // Nombre de lignes de la carte
+} t_game;
+
+#define TILE_SIZE 64
+
 #include <fcntl.h>
 #include <unistd.h>
+#include <stdlib.h>
 #include "./gnl/get_next_line.h"
 #include "./printf/ft_printf.h"
 #include "./minilibx-linux/mlx.h"
@@ -24,5 +40,18 @@ int		ft_count_map(char *file);
 int 	ft_check_map(char **map, char *filename);
 int		ft_check_rec(char **map, char *filename);
 int		ft_check_rec2(int lo, char *filename);
+int	ft_check_content_2(int E, int I, int P);
+int	ft_check_content(char **map);
+int	ft_check_wall(char **map);
+int	ft_check_wall_sides(char **map);
+int	ft_check_wall_top(char **map);
+int	ft_check_zero(char **map);
+void *load_image(void *mlx, char *path);
+void draw_map(t_game *game);
+void ft_initialize_mlx(t_game *game);
+void ft_calculate_dimensions(t_game *game);
+void ft_create_window(t_game *game);
+int ft_close_window(t_game *game);
+
 
 #endif

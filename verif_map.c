@@ -6,7 +6,7 @@
 /*   By: tomlimon <tomlimon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 22:24:06 by tomlimon          #+#    #+#             */
-/*   Updated: 2024/11/16 22:55:02 by tomlimon         ###   ########.fr       */
+/*   Updated: 2024/11/17 21:14:28 by tomlimon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,10 @@ int	ft_check_rec(char **map, char *filename)
 	}
 	if (ft_check_rec2(size, filename) == 1)
 		return (1);
+	else if (ft_check_content(map) == 1)
+		return (1);
+	else if (ft_check_wall(map) == 1)
+		return (1);
 	return (0);
 }
 
@@ -42,9 +46,7 @@ int	ft_check_rec2(int lo, char *filename)
 	int	haut;
 
 	haut = ft_count_map(filename);
-	if (haut > lo)
-		return (1);
-	else if (haut == lo)
+	if (haut == lo)
 		return (1);
 	else
 		return (0);
@@ -56,4 +58,44 @@ int ft_check_map(char **map, char *filename)
 		return (1);
 	else
 		return (0);
+}
+
+int	ft_check_content(char **map)
+{
+	int	i;
+	int	j;
+	int	E;
+	int C;
+	int	P;
+
+	j = 0;
+	E = 0;
+	C = 0;
+	P = 0;
+	while(map[j])
+	{
+		i = -1;
+		while(map[j][++i])
+		{
+			if (map[j][i] == 'E')
+				E++;
+			else if (map[j][i] == 'P')
+				P++;
+			else if (map[j][i] == 'C')
+				C++;
+		}
+		j++;
+	}
+	return (ft_check_content_2(E, C, P));
+}
+
+int	ft_check_content_2(int E, int C, int P)
+{
+	if (E != 1)
+		return (1);
+	else if (C < 1)
+		return (1);
+	else if (P != 1)
+		return (1);
+	return (0);
 }
