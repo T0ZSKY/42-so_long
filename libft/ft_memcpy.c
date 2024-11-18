@@ -1,13 +1,13 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: tomlimon <tom.limon@>                      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 14:34:50 by tomlimon          #+#    #+#             */
-/*   Updated: 2024/11/07 16:04:16 by tomlimon         ###   ########.fr       */
-/*                                                                            */
+/*																			*/
+/*														:::	  ::::::::   */
+/*   ft_memcpy.c										:+:	  :+:	:+:   */
+/*													+:+ +:+		 +:+	 */
+/*   By: tomlimon <tom.limon@>					  +#+  +:+	   +#+		*/
+/*												+#+#+#+#+#+   +#+		   */
+/*   Created: 2024/11/04 14:34:50 by tomlimon		  #+#	#+#			 */
+/*   Updated: 2024/11/07 16:04:16 by tomlimon		 ###   ########.fr	   */
+/*																			*/
 /* ************************************************************************** */
 
 #include "libft.h"
@@ -36,15 +36,15 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 
 int main()
 {
-    char src[20] = "Hello, world!";
-    char dest[20];
+	char src[20] = "Hello, world!";
+	char dest[20];
 
-    printf("Avant memcpy : %s\n", dest);
+	printf("Avant memcpy : %s\n", dest);
 
-    memcpy(dest, src, strlen(src) + 1);
+	memcpy(dest, src, strlen(src) + 1);
 
-    printf("Après memcpy : %s\n", dest);
+	printf("Après memcpy : %s\n", dest);
 
-    return 0;
+	return 0;
 }
 */

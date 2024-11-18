@@ -1,13 +1,13 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: tomlimon <tom.limon@>                      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/13 12:36:11 by tomlimon          #+#    #+#             */
-/*   Updated: 2024/11/15 13:49:36 by tomlimon         ###   ########.fr       */
-/*                                                                            */
+/*																			*/
+/*														:::	  ::::::::   */
+/*   get_next_line.c									:+:	  :+:	:+:   */
+/*													+:+ +:+		 +:+	 */
+/*   By: tomlimon <tom.limon@>					  +#+  +:+	   +#+		*/
+/*												+#+#+#+#+#+   +#+		   */
+/*   Created: 2024/11/13 12:36:11 by tomlimon		  #+#	#+#			 */
+/*   Updated: 2024/11/15 13:49:36 by tomlimon		 ###   ########.fr	   */
+/*																			*/
 /* ************************************************************************** */
 
 #include "get_next_line.h"
@@ -92,24 +92,24 @@ void	copy_strings(char *dest, const char *src, int start)
 	}
 }
 /*
-#include <fcntl.h>    // pour open
-#include <stdio.h>    // pour printf
+#include <fcntl.h>	// pour open
+#include <stdio.h>	// pour printf
 
 int main(void)
 {
-    const char *fileName = "./test.txt";
-    int fd = open(fileName, O_RDONLY);
-    int i = 0;
+	const char *fileName = "./test.txt";
+	int fd = open(fileName, O_RDONLY);
+	int i = 0;
 
-    char *line;
-    while ((line = get_next_line(fd)) != NULL && i < 50000)
-    {
-        printf("%s\n",line);
-        free(line);
-        i++;
-    }
+	char *line;
+	while ((line = get_next_line(fd)) != NULL && i < 50000)
+	{
+		printf("%s\n",line);
+		free(line);
+		i++;
+	}
 
-    close(fd);
-    return 0;
+	close(fd);
+	return 0;
 }
 */

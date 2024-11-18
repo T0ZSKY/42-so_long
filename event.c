@@ -1,14 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   event.c                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: tomlimon <tomlimon@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/18 13:23:59 by tomlimon          #+#    #+#             */
-/*   Updated: 2024/11/18 16:36:53 by tomlimon         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
 #include "so_long.h"
 #include <stdio.h>
@@ -27,24 +16,24 @@ int	key_hook(int keycode, t_game *game)
 	int	moove;
 
 	moove = 0;
-	if (keycode == 65307) // Échap
+	if (keycode == 53) // Échap
 		close_game(game);
-	else if (keycode == 119)
+	else if (keycode == 13)
 	{
 		new_y--;
 		moove = 1;
 	}
-	else if (keycode == 115)
+	else if (keycode == 1)
 	{
 		new_y++;
 		moove = 1;
 	}
-	else if (keycode == 97)
+	else if (keycode == 0)
 	{
 		new_x--;
 		moove = 1;
 	}
-	else if (keycode == 100)
+	else if (keycode == 2)
 	{
 		new_x++;
 		moove = 1;
@@ -58,7 +47,7 @@ int	key_hook(int keycode, t_game *game)
 	}
 	else if (game->map[new_y][new_x] == 'C')
 	{
-		game->map[game->player_y][game->player_x] = 'A'; 
+		game->map[game->player_y][game->player_x] = 'A';
 		game->map[new_y][new_x] = 'P';
 		game->player_x = new_x;
 		game->player_y = new_y;
@@ -72,13 +61,13 @@ int	key_hook(int keycode, t_game *game)
 	else if (game->map[new_y][new_x] != '1' && game->map[new_y][new_x] != 'A'
 	&& game->map[new_y][new_x] != 'E')
 	{
-		game->map[game->player_y][game->player_x] = '0'; 
+		game->map[game->player_y][game->player_x] = '0';
 		game->map[new_y][new_x] = 'P';
 		game->player_x = new_x;
 		game->player_y = new_y;
 		game->marche = game->marche + 1;
 		ft_printf("%d\n", game->marche);
- 		draw_map(game);
+		draw_map(game);
 	}
 	return (0);
 }

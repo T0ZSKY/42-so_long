@@ -1,13 +1,13 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: tomlimon <tomlimon@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 20:51:52 by tomlimon          #+#    #+#             */
-/*   Updated: 2024/11/05 21:36:52 by tomlimon         ###   ########.fr       */
-/*                                                                            */
+/*																			*/
+/*														:::	  ::::::::   */
+/*   ft_strtrim.c									   :+:	  :+:	:+:   */
+/*													+:+ +:+		 +:+	 */
+/*   By: tomlimon <tomlimon@student.42.fr>		  +#+  +:+	   +#+		*/
+/*												+#+#+#+#+#+   +#+		   */
+/*   Created: 2024/11/05 20:51:52 by tomlimon		  #+#	#+#			 */
+/*   Updated: 2024/11/05 21:36:52 by tomlimon		 ###   ########.fr	   */
+/*																			*/
 /* ************************************************************************** */
 
 #include "libft.h"
@@ -63,11 +63,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 #include <stdio.h>
 
 int main() {
-    char *s1 = "xaxaxaxahello worldxaxaxaxaxa";
-    char *set = "xa";
-    char *result = ft_strtrim(s1, set);
-    printf("Result: %s\n", result);
-    free(result);  
-    return 0;
+	char *s1 = "xaxaxaxahello worldxaxaxaxaxa";
+	char *set = "xa";
+	char *result = ft_strtrim(s1, set);
+	printf("Result: %s\n", result);
+	free(result);
+	return 0;
 }
 */

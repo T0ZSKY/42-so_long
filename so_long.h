@@ -1,38 +1,38 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: tomlimon <tomlimon@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/16 21:08:52 by tomlimon          #+#    #+#             */
-/*   Updated: 2024/11/18 16:20:42 by tomlimon         ###   ########.fr       */
-/*                                                                            */
+/*																			*/
+/*														:::	  ::::::::   */
+/*   so_long.h										  :+:	  :+:	:+:   */
+/*													+:+ +:+		 +:+	 */
+/*   By: tomlimon <tomlimon@student.42.fr>		  +#+  +:+	   +#+		*/
+/*												+#+#+#+#+#+   +#+		   */
+/*   Created: 2024/11/16 21:08:52 by tomlimon		  #+#	#+#			 */
+/*   Updated: 2024/11/18 16:20:42 by tomlimon		 ###   ########.fr	   */
+/*																			*/
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-typedef struct s_game 
+typedef struct s_game
 {
-    void    *mlx;
-    void    *win;
-    void    *img_wall;
-    void    *img_floor;
-    void    *img_collectible;
-    void    *img_player;
-    void    *img_exit;
-    void    *img_item_empty;
-    char    **map;
-    int     nbr_C;
-    int     nbr_C_player;
-    int     flag_C;
-    int     width;
-    int     height;
-    int     player_x;
-    int     player_y;
-    int     marche;
-    int     flag;
+	void	*mlx;
+	void	*win;
+	void	*img_wall;
+	void	*img_floor;
+	void	*img_collectible;
+	void	*img_player;
+	void	*img_exit;
+	void	*img_item_empty;
+	char	**map;
+	int	 nbr_C;
+	int	 nbr_C_player;
+	int	 flag_C;
+	int	 width;
+	int	 height;
+	int	 player_x;
+	int	 player_y;
+	int	 marche;
+	int	 flag;
 } t_game;
 
 

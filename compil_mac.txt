@@ -1,0 +1,1 @@
+gcc *.c ./printf/*.c ./gnl/*.c -L./minilibx-linux -lmlx -framework OpenGL -framework AppKit -g -o so_long

@@ -1,13 +1,13 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: tomlimon <tomlimon@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 14:14:44 by tomlimon          #+#    #+#             */
-/*   Updated: 2024/11/05 10:55:14 by tomlimon         ###   ########.fr       */
-/*                                                                            */
+/*																			*/
+/*														:::	  ::::::::   */
+/*   ft_bzero.c										 :+:	  :+:	:+:   */
+/*													+:+ +:+		 +:+	 */
+/*   By: tomlimon <tomlimon@student.42.fr>		  +#+  +:+	   +#+		*/
+/*												+#+#+#+#+#+   +#+		   */
+/*   Created: 2024/11/04 14:14:44 by tomlimon		  #+#	#+#			 */
+/*   Updated: 2024/11/05 10:55:14 by tomlimon		 ###   ########.fr	   */
+/*																			*/
 /* ************************************************************************** */
 
 #include "libft.h"
@@ -30,25 +30,25 @@ void	ft_bzero(void *s, size_t n)
 
 int main()
 {
-    char buffer[20];
+	char buffer[20];
 
-    memset(buffer, 'A', sizeof(buffer) - 1);
-    buffer[19] = '\0';
+	memset(buffer, 'A', sizeof(buffer) - 1);
+	buffer[19] = '\0';
 
-    printf("Avant bzero : %s\n", buffer);
+	printf("Avant bzero : %s\n", buffer);
 
-    bzero(buffer, 10);
+	bzero(buffer, 10);
 
-    printf("Après bzero : ");
-    for (int i = 0; i < 20; i++)
-    {
-        if (buffer[i] == '\0')
-            printf("\\0");
-        else
-            printf("%c", buffer[i]);
-    }
-    printf("\n");
+	printf("Après bzero : ");
+	for (int i = 0; i < 20; i++)
+	{
+		if (buffer[i] == '\0')
+			printf("\\0");
+		else
+			printf("%c", buffer[i]);
+	}
+	printf("\n");
 
-    return 0;
+	return 0;
 }
 */

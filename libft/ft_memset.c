@@ -1,13 +1,13 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: tomlimon <tomlimon@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 13:53:06 by tomlimon          #+#    #+#             */
-/*   Updated: 2024/11/05 11:30:02 by tomlimon         ###   ########.fr       */
-/*                                                                            */
+/*																			*/
+/*														:::	  ::::::::   */
+/*   ft_memset.c										:+:	  :+:	:+:   */
+/*													+:+ +:+		 +:+	 */
+/*   By: tomlimon <tomlimon@student.42.fr>		  +#+  +:+	   +#+		*/
+/*												+#+#+#+#+#+   +#+		   */
+/*   Created: 2024/11/04 13:53:06 by tomlimon		  #+#	#+#			 */
+/*   Updated: 2024/11/05 11:30:02 by tomlimon		 ###   ########.fr	   */
+/*																			*/
 /* ************************************************************************** */
 
 #include "libft.h"
@@ -32,17 +32,17 @@ void	*ft_memset(void *s, int c, size_t n)
 
 int main()
 {
-    char buffer[20];
+	char buffer[20];
 
-    memset(buffer, '-', sizeof(buffer) - 1);
-    buffer[19] = '\0';
+	memset(buffer, '-', sizeof(buffer) - 1);
+	buffer[19] = '\0';
 
-    printf("Avant memset : %s\n", buffer);
+	printf("Avant memset : %s\n", buffer);
 
-    memset(buffer, 'A', 10);
+	memset(buffer, 'A', 10);
 
-    printf("Après memset : %s\n", buffer);
+	printf("Après memset : %s\n", buffer);
 
-    return 0;
+	return 0;
 }
 */
