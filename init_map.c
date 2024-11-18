@@ -6,7 +6,7 @@
 /*   By: tomlimon <tomlimon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 21:09:06 by tomlimon          #+#    #+#             */
-/*   Updated: 2024/11/17 21:57:08 by tomlimon         ###   ########.fr       */
+/*   Updated: 2024/11/18 14:50:59 by tomlimon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ void draw_map(t_game *game)
                 mlx_put_image_to_window(game->mlx, game->win, game->img_player, x * TILE_SIZE, y * TILE_SIZE);
             else if (game->map[y][x] == 'E') // Sortie
                 mlx_put_image_to_window(game->mlx, game->win, game->img_exit, x * TILE_SIZE, y * TILE_SIZE);
+            else if (game->map[y][x] == 'A') // item_empty
+                mlx_put_image_to_window(game->mlx, game->win, game->img_item_empty, x * TILE_SIZE, y * TILE_SIZE);
             x++;
         }
         y++;
@@ -65,6 +67,10 @@ void ft_calculate_dimensions(t_game *game)
 
     // Réduction de la largeur
     game->width = game->width - 1;
+    game->marche = 0;
+    game->nbr_C_player = 0;
+
+
 }
 
 int ft_close_window(t_game *game)

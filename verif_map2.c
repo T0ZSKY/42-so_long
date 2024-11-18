@@ -6,7 +6,7 @@
 /*   By: tomlimon <tomlimon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 13:57:35 by tomlimon          #+#    #+#             */
-/*   Updated: 2024/11/17 14:56:15 by tomlimon         ###   ########.fr       */
+/*   Updated: 2024/11/18 14:21:02 by tomlimon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,22 +68,19 @@ int	ft_check_zero(char **map)
 	int	i;
 	int	j;
 
-	// On commence à la deuxième ligne et on s'arrête à l'avant-dernière
 	j = 1;
-	while (map[j + 1])  // Tant qu'il y a des lignes après la ligne courante
+	while (map[j + 1])
 	{
-		// On commence à partir de la deuxième colonne (la première étant un mur)
 		i = 1;
-		while (map[j][i] && map[j][i + 1])  // Ignorer la dernière colonne
+		while (map[j][i] && map[j][i + 1])
 		{
-			// Si le caractère est autre que '0', 'E', 'P', 'C' ou '1', c'est une erreur
 			if (map[j][i] != '0' && map[j][i] != 'E' && map[j][i] != 'P' && map[j][i] != 'C' && map[j][i] != '1')
 				return (1);
 			i++;
 		}
 		j++;
 	}
-	return (0);  // Si tout est valide, retourne 0
+	return (0);
 }
 
 
