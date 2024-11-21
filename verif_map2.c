@@ -6,7 +6,7 @@
 /*   By: tomlimon <tomlimon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 13:57:35 by tomlimon          #+#    #+#             */
-/*   Updated: 2024/11/18 14:21:02 by tomlimon         ###   ########.fr       */
+/*   Updated: 2024/11/20 13:42:44 by tomlimon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,8 @@ int	ft_check_zero(char **map)
 		i = 1;
 		while (map[j][i] && map[j][i + 1])
 		{
-			if (map[j][i] != '0' && map[j][i] != 'E' && map[j][i] != 'P' && map[j][i] != 'C' && map[j][i] != '1')
+			if (map[j][i] != '0' && map[j][i] != 'E' && map[j][i] != 'P'
+				&& map[j][i] != 'C' && map[j][i] != '1')
 				return (1);
 			i++;
 		}
@@ -82,11 +83,3 @@ int	ft_check_zero(char **map)
 	}
 	return (0);
 }
-
-
-
-
-
-
-
-

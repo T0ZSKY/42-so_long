@@ -1,2 +1,0 @@
-gcc *.c ./printf/*.c ./gnl/*.c -L./minilibx-linux -lmlx -L/usr/lib -I./minilibx-linux -lXext -lX11 -lm -lz -g -o so_long
-

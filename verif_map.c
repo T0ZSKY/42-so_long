@@ -6,7 +6,7 @@
 /*   By: tomlimon <tomlimon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 22:24:06 by tomlimon          #+#    #+#             */
-/*   Updated: 2024/11/18 14:34:29 by tomlimon         ###   ########.fr       */
+/*   Updated: 2024/11/21 14:09:48 by tomlimon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	ft_check_rec2(int lo, char *filename)
 		return (0);
 }
 
-int ft_check_map(char **map, char *filename, t_game *game)
+int	ft_check_map(char **map, char *filename, t_game *game)
 {
 	if (ft_check_rec(map, filename, game) == 1)
 		return (1);
@@ -64,35 +64,35 @@ int	ft_check_content(char **map, t_game *game)
 {
 	int	i;
 	int	j;
-	int	E;
-	int C;
-	int	P;
+	int	e;
+	int	c;
+	int	p;
 
 	j = 0;
-	E = 0;
-	C = 0;
-	P = 0;
-	while(map[j])
+	e = 0;
+	c = 0;
+	p = 0;
+	while (map[j])
 	{
 		i = -1;
-		while(map[j][++i])
+		while (map[j][++i])
 		{
 			if (map[j][i] == 'E')
-				E++;
+				e++;
 			else if (map[j][i] == 'P')
-				P++;
+				p++;
 			else if (map[j][i] == 'C')
-				C++;
+				c++;
 		}
 		j++;
 	}
-	return (ft_check_content_2(E, C, P, game));
+	return (ft_check_content_2(e, c, p, game));
 }
 
-int	ft_check_content_2(int E, int C, int P, t_game *game)
+int	ft_check_content_2(int e, int C, int P, t_game *game)
 {
-	game->nbr_C = C;
-	if (E != 1)
+	game->nbr_c = C;
+	if (e != 1)
 		return (1);
 	else if (C < 1)
 		return (1);

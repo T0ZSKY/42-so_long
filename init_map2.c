@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   init_map2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tomlimon <tomlimon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 14:58:46 by tomlimon          #+#    #+#             */
-/*   Updated: 2024/11/06 15:35:45 by tomlimon         ###   ########.fr       */
+/*   Created: 2024/11/17 21:57:00 by tomlimon          #+#    #+#             */
+/*   Updated: 2024/11/21 13:54:30 by tomlimon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "so_long.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_create_window(t_game *game)
 {
-	if (lst)
+	game->win = mlx_new_window(
+			game->mlx,
+			game->width * TILE_SIZE,
+			game->height * TILE_SIZE,
+			"so_long");
+	if (!game->win)
 	{
-		new->next = *lst;
-		*lst = new;
+		write(2, "Error: MLX window creation failed\n", 34);
+		exit(1);
 	}
+	mlx_hook(game->win, 17, 0, ft_close_window, game);
 }
