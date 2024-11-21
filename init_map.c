@@ -6,7 +6,7 @@
 /*   By: tomlimon <tomlimon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 21:09:06 by tomlimon          #+#    #+#             */
-/*   Updated: 2024/11/21 13:58:17 by tomlimon         ###   ########.fr       */
+/*   Updated: 2024/11/21 14:40:56 by tomlimon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,9 @@ void	draw_tile(t_game *game, int x, int y)
 		mlx_put_image_to_window(
 			game->mlx, game->win, game->img_item_empty, x * TILE_SIZE,
 			y * TILE_SIZE);
+	else if (game->map[y][x] == 'K')
+		mlx_put_image_to_window(
+			game->mlx, game->win, game->img_enemy, x * TILE_SIZE,
+			y * TILE_SIZE);
 }
+

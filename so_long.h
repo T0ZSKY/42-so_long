@@ -6,7 +6,7 @@
 /*   By: tomlimon <tomlimon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 21:08:52 by tomlimon          #+#    #+#             */
-/*   Updated: 2024/11/21 14:18:36 by tomlimon         ###   ########.fr       */
+/*   Updated: 2024/11/21 15:39:31 by tomlimon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,21 @@ typedef struct s_game
 	void	*img_collectible;
 	void	*img_player;
 	void	*img_exit;
+	void	*img_enemy;
 	void	*img_item_empty;
 	char	**map;
 	int		nbr_c;
 	int		nbr_c_player;
 	int		flag_c;
+	int		exit_x;
+	int		exit_y;
 	int		width;
 	int		height;
+	int 	turn_count;
 	int		player_x;
+	int		enemy_x;
 	int		player_y;
+	int		enemy_y;
 	int		marche;
 	int		flag;
 }	t_game;
@@ -73,5 +79,7 @@ void	ft_initialize_mlx(t_game *game);
 void	ft_calculate_dimensions(t_game *game);
 int		ft_close_window(t_game *game);
 void	draw_tile(t_game *game, int x, int y);
+void	move_enemy(t_game *game);
+void	place_enemy(t_game *game);
 
 #endif

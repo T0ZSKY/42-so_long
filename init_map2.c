@@ -6,7 +6,7 @@
 /*   By: tomlimon <tomlimon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 21:57:00 by tomlimon          #+#    #+#             */
-/*   Updated: 2024/11/21 13:54:30 by tomlimon         ###   ########.fr       */
+/*   Updated: 2024/11/21 15:39:26 by tomlimon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,3 +26,5 @@ void	ft_create_window(t_game *game)
 	}
 	mlx_hook(game->win, 17, 0, ft_close_window, game);
 }
+
+

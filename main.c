@@ -6,7 +6,7 @@
 /*   By: tomlimon <tomlimon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 13:52:04 by tomlimon          #+#    #+#             */
-/*   Updated: 2024/11/21 13:52:07 by tomlimon         ###   ########.fr       */
+/*   Updated: 2024/11/21 15:36:12 by tomlimon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ int	initialize_graphics(t_game *game)
 	game->img_collectible = load_image(game->mlx, "./assets/item.xpm");
 	game->img_player = load_image(game->mlx, "./assets/player.xpm");
 	game->img_exit = load_image(game->mlx, "./assets/exit.xpm");
+	game->img_enemy = load_image(game->mlx, "./assets/mob.xpm");
 	game->img_item_empty = load_image(game->mlx, "./assets/item_empty.xpm");
 	if (!game->img_wall || !game->img_floor || !game->img_collectible
 		|| !game->img_player || !game->img_exit)
@@ -77,6 +78,7 @@ int	main(int argc, char **argv)
 		return (1);
 	if (initialize_graphics(&game))
 		return (1);
+	place_enemy(&game);
 	setup_hooks_and_loop(&game);
 	return (0);
 }

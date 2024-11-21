@@ -6,7 +6,7 @@
 /*   By: tomlimon <tomlimon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 13:23:59 by tomlimon          #+#    #+#             */
-/*   Updated: 2024/11/20 13:23:55 by tomlimon         ###   ########.fr       */
+/*   Updated: 2024/11/21 15:25:43 by tomlimon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,26 @@ int	key_hook(int keycode, t_game *game)
 	new_x = game->player_x;
 	new_y = game->player_y;
 	moove = 0;
+
+	// Vérifier si le joueur a appuyé sur la touche échappe
 	if (keycode == 65307)
 		close_game(game);
+
+	// Gérer le mouvement du joueur
 	handle_key_movement(keycode, &new_x, &new_y, &moove);
+
 	if (moove == 0)
 		return (0);
+
 	handle_move(game, new_x, new_y);
+
+	game->turn_count++;
+	if (game->turn_count % 2 == 0)
+		move_enemy(game);
+
 	return (0);
 }
+
 
 void	find_player_position(t_game *game)
 {
