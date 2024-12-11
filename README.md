@@ -17,7 +17,7 @@
 
 ───────────────────────────────────────────────────
 
-**Title**: 42 So_long
+**Title**: 42 So_long 
 **Author**: tomlimon  
 **Date**: December 2024  
 **Description**: My So_long project a mini game
